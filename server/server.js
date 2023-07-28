@@ -5,9 +5,9 @@ const app = express();
 
 app.get("/api", (req, res) => { 
   // récupération de données de recherche
-  const searchTerm = req.query.search || ""; 
+  const nomPlant = req.query.search || ""; 
   //encoding variable pour bien l'envoyer à l'api
-  const apiUrl = `https://trefle.io/api/v1/plants/search?token=B0XVucF6lIwHqo4_Sar0rAWFjoekaY4HGZEOfCYWgFE&q=${encodeURIComponent(searchTerm)}`; 
+  const apiUrl = `https://trefle.io/api/v1/plants/search?token=B0XVucF6lIwHqo4_Sar0rAWFjoekaY4HGZEOfCYWgFE&q=${encodeURIComponent(nomPlant)}`; 
   fetch(apiUrl)
     .then(response => response.json()) 
     .then(data => {
